@@ -1,0 +1,3 @@
+touch -t 20060101000001 dummy1
+touch -t 20071231235959 dummy2
+find /path/to/files \( -newer dummy1 -a ! -newer dummy2 \) -exec ls -l {} \;
