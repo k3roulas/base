@@ -19,14 +19,8 @@ Test multi
 Array
 
 set -A LISTFILE .bashrc .vimrc .zshrc .tmux.conf
-set -A LISTDIR  .vim
 for I in ${LISTFILE[@]}
 do
     cp $SOURCE$I $DEST$I
-done
-
-for I in ${LISTDIR[@]}
-do
-   cp -R $SOURCE$I $DEST$I
 done
 
