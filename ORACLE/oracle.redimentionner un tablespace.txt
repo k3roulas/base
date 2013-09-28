@@ -1,0 +1,1 @@
+alter database datafile '/path_to_file/NAME_REF_data_xml_01.dbf' resize 2040M;

@@ -1,0 +1,12 @@
+arret de l'instance :
+(exemple pour badoa)
+
+se connecter en tant que system/manger puis as sysdba
+
+export ORACE_SID=SID_NAME
+
+sqlplus system/manager@SID_NAME
+
+connect system/manager as sysdba
+
+shutdown

@@ -1,0 +1,11 @@
+demarrage de l'instance :
+
+se connecter en tant que system/manger puis as sysdba
+
+export ORACLE_SID=SID_NAME
+
+sqlplus system/manager@SID_NAME
+
+connect system/manager as sysdba
+
+startup;

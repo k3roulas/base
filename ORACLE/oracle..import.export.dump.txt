@@ -1,0 +1,15 @@
+avec les anciennes fonctionnalité d'oracle (imp/exp)
+
+se logger system/manager sur AGAPE10@CN2I
+lancer un drop user AGAPE cascade;
+lancer un cmd et executer : 
+imp userid=AGAPE@AGAPE10 fromuser=AGAPE touser=AGAPE file=./*.dmp statistics=none GRANT=N log=imp.log
+
+
+avec les nouvelles fonctionnalités d'oracle (impdp/expdp)
+
+expdp agape/agape@AGAPE10 schemas=AGAPE directory=. dumpfile=dump.dp.dmp
+impdp agape/agape@AGAPE10 schemas=AGAPE directory=. dumpfile=dump.dp.dmp
+
+
+par defaut le dump est stocker dans : 

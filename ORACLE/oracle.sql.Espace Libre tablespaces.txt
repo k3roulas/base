@@ -1,0 +1,11 @@
+SELECT a.tablespace_name AS nom,
+  LPAD(SUBSTR(ROUND(a.bytes / (1024*1024),1),1,10)||' M',10) AS total,
+  LPAD(SUBSTR(ROUND(b.bytes / (1024*1024),1),1,10)||' M',10) AS free ,
+  LPAD(SUBSTR(ROUND(100* b.bytes / a.bytes,1),1,8)||' %',12) AS percent_free
+FROM
+(SELECT tablespace_name, SUM(bytes) bytes FROM dba_data_files
+   GROUP BY tablespace_name) a,
+(SELECT tablespace_name, SUM(bytes) bytes FROM dba_free_space
+   GROUP BY tablespace_name) b
+WHERE a.tablespace_name = b.tablespace_name
+ORDER BY percent_free

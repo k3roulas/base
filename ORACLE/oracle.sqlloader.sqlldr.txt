@@ -1,0 +1,41 @@
+2.5	Procédure pour l’export  /import AGAPE
+?	Exécuter le script ci-dessous sous sqlplus dans la base Geppetto (à adapter pour le nom du répertoire et si les colonnes de la table ont changé)
+set head off;
+set feed off;
+set trimspool on;
+set linesize 1000; 
+set pagesize 0;
+set echo off;
+set termout off;
+spool D:\offres.csv;
+select DATE_ACHAT 
+|| ';' || FOURNISSEUR 
+|| ';' || PERIODE 
+|| ';' || DATE_DEBUT 
+|| ';' || DATE_FIN 
+from TABLE;
+spool off;
+
+?	Transmettre le fichier généré offres.csv à l'application cible 
+Sur le serveur qui héberge l application :
+Création du répertoire c:\sqlldr
+Création du fichier controle.txt. 
+Copier le contenu suivant dans controle.txt :
+LOAD DATA INFILE 'offres.csv'
+APPEND
+INTO TABLE IMP_EAI_OFFRES_DET 
+FIELDS TERMINATED BY ';'
+(  
+DATE_ACHAT,
+FOURNISSEUR,
+PERIODE,
+DATE_DEBUT,
+DATE_FIN
+)
+ 
+copier le fichier offres.csv issu de l'application dans le répertoire c:\sqlldr
+Se placer dans le répertoire c:\sqlldr  et exécuter la commande :
+ 
+sqlldr userid=USER_NAME@SID_NAME/mot_de_passe_schema control=controle.txt log=log.txt bad=bad.txt discard=disard.txt direct=y errors=0
+ 
+Vérifier l'insertion des lignes dans la table
