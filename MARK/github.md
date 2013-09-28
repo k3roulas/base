@@ -1,6 +1,8 @@
-Will become a heading ==============
+Will become a heading 
+\==============
 
-Will become a sub heading --------------
+Will become a sub heading 
+\--------------
 
 \*This will be Italic\*
 
