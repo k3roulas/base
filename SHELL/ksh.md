@@ -1,0 +1,35 @@
+Variable
+--------
+
+$0 command name, script
+$1 first argument
+${n} n ième argument (n >9)
+$# argument number without $0
+$* all argument
+$@ all parameter
+
+Test
+----
+
+Test number
+>if [ $# -ne "1" ]
+Test string 
+>if [ "$1" != "install" ] 
+Test multi 
+>if [ $# -ne "1" ] && [ "$1" != "install" ]
+
+Array
+-----
+
+>set -A LISTFILE .bashrc .vimrc .zshrc .tmux.conf
+>set -A LISTDIR  .vim
+>for I in ${LISTFILE[@]}
+>do
+    >cp $SOURCE$I $DEST$I
+>done
+>
+>for I in ${LISTDIR[@]}
+>do
+    >cp -R $SOURCE$I $DEST$I
+>done
+
