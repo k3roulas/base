@@ -1,0 +1,4 @@
+apt-get remove --purge package_name
+apt-get clean
+debfoster
+deborphan | xargs apt-get -y remove

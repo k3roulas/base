@@ -1,0 +1,29 @@
+Check if the disk exist
+fdisk -l
+
+Disk /dev/sdb: 32.2 GB, 32212254720 bytes
+255 heads, 63 sectors/track, 3916 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+
+Disk /dev/sdb doesn't contain a valid partition table
+
+Create new partition
+cfdisk /dev/sdb
+
+Format 
+mkfs.ext3 /dev/sdb1
+
+Mount
+mkdir /disk2
+mount -t ext3 /dev/sdb1 /disk2
+
+Automount via /etc/fstab
+/dev/sdb1 /disk2 ext3 defaults,errors=remount-ro 0 1
+
+Or get id via 
+blkid
+/dev/sda5: UUID="5af6a6af-7c48-427b-9650-1f396eae83e5" TYPE="swap" 
+/dev/sda1: UUID="67cbc50c-a878-43f5-b2aa-2f70905c1113" TYPE="ext4" 
+/dev/sdb1: UUID="44755684-6c2d-424d-adb9-91ace993f8b3" TYPE="ext3" 
+And automount via /etc/fstab
+UUID=44755684-6c2d-424d-adb9-91ace993f8b3 ext3 defaults,errors=remount-ro 0 1
