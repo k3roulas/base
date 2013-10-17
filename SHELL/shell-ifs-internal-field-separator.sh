@@ -10,3 +10,6 @@ cat tt | while read ligne ; do echo $ligne ; done
 
 #or in a script
 while read ligne ; do echo $ligne ; done; < tt
+
+
+    find directory_in  -f -name "*.txt" | while read file; do echo $ligne;done
