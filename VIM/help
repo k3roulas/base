@@ -1,0 +1,19 @@
+Read tags
+:helptags + directory
+
+Open help 
+:help subject
+
+Navigation
+ctrl+] : Open link 
+ctrl+t : back
+ctrl+o : next buffer
+ctrl+i : previous buffer
+
+Search entire help 
+:helpgrep \csearch.\{,12}file
+-> search "search" + up to 12 char + "file" (\c : case insensitive)
+Navigation in result :cnext :cprev :cnfile :cpfile :cfirst :clast  :cc (back) :open
+
+
+

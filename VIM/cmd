@@ -1,0 +1,23 @@
+gg : 1line
+
+WINDOWS
+ctrl+w s : split horizontal
+ctrl+w v : split vertical
+ctrl+w w : change next window
+ctrl+w hjkl : change window
+
+MOVE
+w : next word 1rst letter
+b : previous word 1rst letter
+e : end of word
+0 : first of line
+^ : first non blank char
+$ : end of line
+G2 : go to line 2
+
+INSERT
+ea : insert after word
+
+VISUAL
+v : enter visual mode
+V : enter visual mode +(select current line)

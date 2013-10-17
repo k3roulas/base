@@ -1,0 +1,17 @@
+
+:Select * from customer
+-> execute a query
+
+,se : Sql Execute under the cursor until the cmd_terminator (;)
+,sel : Sql Execute Line under the cursor until the cmd_terminator (;)
+,st : Sql table under the cursor (Select *)
+,sT : Sql table under the cursor return n row (will be prompted)
+,stw : Sql table under the cursor with a where clause (will be prompted)
+
+,sdt : Sql describe table
+,slt : Sql list table
+,slc : Swl list colunm
+
+
+
+
