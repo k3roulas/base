@@ -1,0 +1,14 @@
+docker search <string> : search in index.docker.io
+docker pull <name> : get image
+docker run <name> cmd : execute a command inside the container
+docker commit 8422 learn/ping : commit a change to a repository
+docker ps  : list all running container 
+docker ps -a 
+docker inspect : see all caracteristics
+docker images : list all local images
+usermod -a -G docker pierre : give access to non root user to docker client
+
+docker logs <ID> : display docker logs
+docker attach -sig-proxy=false <ID> : attach to the container
+
+docker run -i -t ubuntu:precise /bin/bash : execute in interactive and pseudo tty an ubuntu:precise image

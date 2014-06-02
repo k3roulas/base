@@ -1,0 +1,4 @@
+sudo apt-get install lxc
+sudo apt-get install cgroup-lite
+sudo cgroups-mount
+curl -s https://get.docker.io/ubuntu/ | sudo sh
